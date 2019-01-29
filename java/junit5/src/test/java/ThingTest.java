@@ -1,4 +1,3 @@
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,12 +6,13 @@ public class ThingTest {
 
 
     int romanToArabic(String romanNumber) {
-        switch (romanNumber) {
-            case "I":
+        char c = romanNumber.charAt(0);
+        switch (c) {
+            case 'I':
                 return 1;
-            case "V":
+            case 'V':
                 return 5;
-            case "X":
+            case 'X':
                 return 10;
         }
 
@@ -24,8 +24,7 @@ public class ThingTest {
         assertEquals(1, romanToArabic("I"));
     }
 
-    @Test
-    @Ignore
+    //@Test
     void it_should_parse_II_as_2() {
         assertEquals(2, romanToArabic("II"));
     }
