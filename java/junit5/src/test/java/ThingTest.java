@@ -4,10 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ThingTest {
 
+
+    int romanToArabic(String romanNumber) {
+        return 0;
+    }
+
     @Test
-    void it_should_call_for_action() {
-        Thing thing = new Thing();
-        String value = thing.callForAction();
-        assertEquals("Food", value);
+    void it_should_take_a_string() {
+        assertEquals(0, romanToArabic("I"));
     }
 }
