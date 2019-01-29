@@ -12,6 +12,8 @@ public class ThingTest {
                 return 1;
             case "V":
                 return 5;
+            case "X":
+                return 10;
         }
 
         return romanNumber.length();
@@ -33,4 +35,8 @@ public class ThingTest {
         assertEquals(5, romanToArabic("V"));
     }
 
+    @Test
+    void it_should_parse_X_as_10() {
+        assertEquals(10, romanToArabic("X"));
+    }
 }
