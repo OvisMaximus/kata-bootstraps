@@ -7,6 +7,10 @@ public class ThingTest {
 
     int romanToArabic(String romanNumber) {
         char c = romanNumber.charAt(0);
+        return romanToArabic(c);
+    }
+
+    private int romanToArabic(char c) {
         switch (c) {
             case 'I':
                 return 1;
@@ -14,9 +18,9 @@ public class ThingTest {
                 return 5;
             case 'X':
                 return 10;
+            default:
+                return 0;
         }
-
-        return romanNumber.length();
     }
 
     @Test
