@@ -1,9 +1,9 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ThingTest {
-
 
     int romanToArabic(String romanNumber) {
         char c = romanNumber.charAt(0);
@@ -23,23 +23,11 @@ public class ThingTest {
         }
     }
 
-    @Test
-    void it_should_parse_I_as_1() {
-        assertEquals(1, romanToArabic("I"));
+    //  @DisplayName("Roman numeral")
+    @ParameterizedTest()
+    @CsvSource({ "I, 1", "V, 5", "X, 10" })
+    void it_should_parse_roman_to_arabic_number(String roman, int arabic) {
+        assertEquals(arabic, romanToArabic(roman));
     }
 
-    //@Test
-    void it_should_parse_II_as_2() {
-        assertEquals(2, romanToArabic("II"));
-    }
-
-    @Test
-    void it_should_parse_V_as_5() {
-        assertEquals(5, romanToArabic("V"));
-    }
-
-    @Test
-    void it_should_parse_X_as_10() {
-        assertEquals(10, romanToArabic("X"));
-    }
 }
